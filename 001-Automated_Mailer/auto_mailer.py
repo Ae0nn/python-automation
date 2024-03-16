@@ -1,7 +1,7 @@
 import os
 import json
 import smtplib
-import ssl
+#import ssl
 import csv
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
@@ -24,7 +24,6 @@ def email_message(recipient_name):
     #read into email html template and create multipart object
     with open('email_message.html') as content:
         email_content =  content.read()
-    #email = MIMEMultipart("alternative")
     email = MIMEMultipart()
     email.attach(MIMEText(email_content, 'html'))
 
@@ -54,8 +53,7 @@ def automated_mailer():
     '''
     Automated_mailer, when called, builds then sends the email to the recipient mailbox. 
     '''
-    #recipient_email ='barongokimaiga@gmail.com'
-    subject= 'New Test Subject'
+    subject= 'Test Subject'
 
     credentials = server_configurations('config.json')
 
@@ -75,7 +73,7 @@ def automated_mailer():
             message = email_message(recipient_name)
             message['From'] = smtp_username
             message['To'] = recipient_email
-            message['CC'] = 'barongokimaiga@gmail.com'
+            message['CC'] = 'sometestemail@test.com'
             message['Subject'] = subject
             #sending message to recipient(s)
             try:
@@ -85,7 +83,7 @@ def automated_mailer():
                     #smtp.send_message(message)
                     response = smtp.send_message(message)
                     print('SMTP Server Response:', response)
-                    #print('Email sent successfully')
+                    
                     print(f'Email sent successfully to {recipient_name} ({recipient_email})')
             except Exception as exc:
                 print('ERROR. Email not sent. Something went wrong: ', exc)
