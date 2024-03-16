@@ -1,0 +1,5 @@
+config.json
+venv/
+recipients.csv
+test.py
+email_attachments/
