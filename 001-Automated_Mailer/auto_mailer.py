@@ -73,7 +73,7 @@ def automated_mailer():
             message = email_message(recipient_name)
             message['From'] = smtp_username
             message['To'] = recipient_email
-            message['CC'] = 'sometestemail@test.com'
+            #message['CC'] = 'sometestemail@test.com'
             message['Subject'] = subject
             #sending message to recipient(s)
             try:
@@ -94,3 +94,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+    

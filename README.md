@@ -8,6 +8,8 @@ Auto Mailer is a Python script designed to automate the process of sending email
 ### Features:
 - Automated email sending with customizable content.
 - Supports attachments for individual messages.
-- Reads recipient information from a CSV file.S
+- Reads recipient information from a CSV file.
 
+![Alt text](<001-Automated_Mailer/sample email automailer.png>)
+Image 001: Sample email submitted from auto_mailer.py
 
